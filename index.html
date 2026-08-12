@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="uk" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progfut — Program Future</title>
+
+  <link rel="icon" type="image/png" href="IMG_4351.PNG">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0A0A0A',
+            brandCard: '#141414',
+            brandAccent: '#B4FF39',
+          },
+          fontFamily: {
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brandDark text-gray-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brandAccent selection:text-black">
+
+  <header class="sticky top-0 z-50 bg-brandDark/80 backdrop-blur-md border-b border-neutral-800">
+    <div class="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img 
+          src="IMG_4351.PNG" 
+          alt="Progfut Logo" 
+          class="h-9 w-auto object-contain rounded"
+        />
+      </div>
+      
+      <nav class="hidden md:flex gap-8 text-sm text-gray-400 font-mono">
+        <a href="#about" class="hover:text-brandAccent transition-colors" data-i18n="nav_about">// about us</a>
+        <a href="#projects" class="hover:text-brandAccent transition-colors" data-i18n="nav_projects">// projects</a>
+        <a href="#services" class="hover:text-brandAccent transition-colors" data-i18n="nav_services">// services</a>
+        <a href="#team" class="hover:text-brandAccent transition-colors" data-i18n="nav_team">// team</a>
+        <a href="#contact" class="hover:text-brandAccent transition-colors" data-i18n="nav_contact">// contact</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button id="lang-toggle" onclick="toggleLanguage()" class="px-3 py-1.5 border border-neutral-700 bg-brandCard text-gray-300 text-xs font-mono rounded hover:border-brandAccent transition-all">
+          🌐 UA
+        </button>
+
+        <a href="#contact" class="px-4 py-2 border border-brandAccent text-brandAccent text-sm font-mono rounded hover:bg-brandAccent hover:text-black transition-all" data-i18n="btn_connect">
+          Connect
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="w-full max-w-5xl mx-auto px-6 py-20 text-center flex flex-col items-center">
+      
+        <img 
+          src="IMG_4351.PNG" 
+          alt="Progfut Brand" 
+          class="w-40 h-40 md:w-56 md:h-56 object-contain mx-auto rounded-xl"
+        />
+
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-mono text-brandAccent mb-8">
+        <span class="w-2 h-2 rounded-full bg-brandAccent animate-ping"></span>
+        <span data-i18n="hero_badge">Building Apps & Indie Games</span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+        <span data-i18n="hero_title_1">We build your</span> <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-brandAccent">
+          Program Future.
+        </span>
+      </h1>
+
+      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed" data-i18n="hero_desc">
+        Молода студія розробки. Поєднуємо чистий геометричний дизайн, високу продуктивність та піксельну естетику.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <a href="#projects" class="px-8 py-4 bg-brandAccent text-black font-bold font-mono rounded hover:shadow-[0_0_20px_rgba(180,255,57,0.4)] transition-all" data-i18n="btn_projects">
+          Переглянути проєкти ↓
+        </a>
+        <a href="#about" class="px-8 py-4 bg-brandCard border border-neutral-800 text-white font-mono rounded hover:border-neutral-600 transition-all" data-i18n="btn_about">
+          Про студію
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="border-t border-neutral-800 py-20 bg-neutral-950/50">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-brandAccent font-mono text-sm uppercase tracking-widest">// About Us</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6" data-i18n="about_title">Команда розробників-ентузіастів</h2>
+          <p class="text-gray-400 leading-relaxed mb-4" data-i18n="about_p1">
+            Progfut — це студія, створена двома розробниками, які палають ідеєю поєднання сучасних технологій із естетикою ретро-геймінгу.
+          </p>
+          <p class="text-gray-400 leading-relaxed" data-i18n="about_p2">
+            Ми розробляємо мобільні застосунки та інді-ігри, приділяючи максимальну увагу оптимізації, зручності користування та унікальному візуальному стилю.
+          </p>
+        </div>
+        
+        <div class="bg-brandCard border border-neutral-800 rounded-xl p-6 font-mono text-sm text-gray-300 shadow-2xl">
+          <div class="flex gap-2 mb-4">
+            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+          </div>
+          <p class="text-brandAccent"><span class="text-gray-500">const</span> studio = {</p>
+          <p class="pl-4">name: <span class="text-green-400">'Progfut'</span>,</p>
+          <p class="pl-4">teamSize: <span class="text-amber-400">2</span>,</p>
+          <p class="pl-4">focus: [<span class="text-green-400">'Mobile Apps'</span>, <span class="text-green-400">'Indie Games'</span>],</p>
+          <p class="pl-4">stack: [<span class="text-green-400">'Unity'</span>, <span class="text-green-400">'Flutter'</span>, <span class="text-green-400">'Tailwind'</span>],</p>
+          <p class="pl-4">status: <span class="text-green-400">'Ready for action'</span></p>
+          <p>};</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="border-t border-neutral-800 py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-end mb-12">
+          <div>
+            <span class="text-brandAccent font-mono text-sm uppercase tracking-widest">// Projects</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2" data-i18n="projects_title">Наші проєкти</h2>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-brandCard border border-neutral-800 rounded-xl overflow-hidden group hover:border-brandAccent transition-all">
+            <div class="h-48 bg-neutral-900 border-b border-neutral-800 flex items-center justify-center relative overflow-hidden">
+              <span class="font-mono text-4xl text-neutral-700 group-hover:text-brandAccent transition-colors">📱 FINLORA</span>
+            </div>
+            <div class="p-6">
+              <div class="flex gap-2 mb-3">
+                <span class="text-xs font-mono px-2 py-1 bg-neutral-800 text-brandAccent rounded">Flutter</span>
+                <span class="text-xs font-mono px-2 py-1 bg-neutral-800 text-gray-300 rounded">Firebase</span>
+                <span class="text-xs font-mono px-2 py-1 bg-neutral-800 text-gray-300 rounded">iOS / Android</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Finlora</h3>
+              <p class="text-gray-400 text-sm mb-4" data-i18n="proj_1_desc">FIN + LORA | FIN → Finance / Financial | LORA → Logic + Road | ТРИВАЄ РОЗРОБКА</p>
+              <a href="#" class="inline-flex items-center text-sm font-mono text-brandAccent hover:underline" data-i18n="more">Детальніше →</a>
+            </div>
+          </div>
+
+          <!--<div class="bg-brandCard border border-neutral-800 rounded-xl overflow-hidden group hover:border-brandAccent transition-all">
+            <div class="h-48 bg-neutral-900 border-b border-neutral-800 flex items-center justify-center relative overflow-hidden">
+              <span class="font-mono text-4xl text-neutral-700 group-hover:text-brandAccent transition-colors">🎮 Pixel Quest</span>
+            </div>
+            <div class="p-6">
+              <div class="flex gap-2 mb-3">
+                <span class="text-xs font-mono px-2 py-1 bg-neutral-800 text-brandAccent rounded">Unity</span>
+                <span class="text-xs font-mono px-2 py-1 bg-neutral-800 text-gray-300 rounded">Pixel Art</span>
+                <span class="text-xs font-mono px-2 py-1 bg-neutral-800 text-gray-300 rounded">2D Game</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">TaskPulse Mobile</h3>
+              <p class="text-gray-400 text-sm mb-4" data-i18n="proj_2_desc">Мінімалістичний трекер задач із гейміфікацією для підвищення продуктивності.</p>
+              <a href="#" class="inline-flex items-center text-sm font-mono text-brandAccent hover:underline" data-i18n="more">Детальніше →</a>
+            </div>-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="border-t border-neutral-800 py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <span class="text-brandAccent font-mono text-sm uppercase tracking-widest">// Services</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-12" data-i18n="services_title">Що ми робимо</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 bg-brandCard border border-neutral-800 rounded-xl hover:border-neutral-600 transition-all">
+            <div class="text-brandAccent font-mono text-2xl mb-4">01.</div>
+            <h3 class="text-xl font-bold mb-2" data-i18n="serv_1_title">Мобільні застосунки</h3>
+            <p class="text-gray-400 text-sm" data-i18n="serv_1_desc">Розробка кросплатформенних застосунків під iOS та Android на Flutter з сучасним UI/UX.</p>
+          </div>
+
+          <div class="p-6 bg-brandCard border border-neutral-800 rounded-xl hover:border-neutral-600 transition-all">
+            <div class="text-brandAccent font-mono text-2xl mb-4">02.</div>
+            <h3 class="text-xl font-bold mb-2" data-i18n="serv_2_title">Геймдев & Інді-ігри</h3>
+            <p class="text-gray-400 text-sm" data-i18n="serv_2_desc">Створення 2D/3D ігор від ідеї та прототипу до публікації в магазинах застосунків.</p>
+          </div>
+
+          <div class="p-6 bg-brandCard border border-neutral-800 rounded-xl hover:border-neutral-600 transition-all">
+            <div class="text-brandAccent font-mono text-2xl mb-4">03.</div>
+            <h3 class="text-xl font-bold mb-2" data-i18n="serv_3_title">UI/UX & Pixel Design</h3>
+            <p class="text-gray-400 text-sm" data-i18n="serv_3_desc">Проєктування інтерфейсів, піксель-арт та стилістика в поєднанні з геометричним мінімалізмом.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="border-t border-neutral-800 py-20 bg-neutral-950/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <span class="text-brandAccent font-mono text-sm uppercase tracking-widest">// Team</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-12" data-i18n="team_title">Наша команда</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div class="bg-brandCard border border-neutral-800 p-6 rounded-xl text-center">
+            <div class="w-24 h-24 bg-neutral-800 rounded-full mx-auto mb-4 flex items-center justify-center font-mono text-2xl text-brandAccent border border-neutral-700">
+              DEV1
+            </div>
+            <h3 class="text-xl font-bold">Демʼян</h3>
+            <p class="text-brandAccent font-mono text-xs mt-1 mb-3">Full Stack Developer & UI/UX Designer</p>
+            <p class="text-gray-400 text-sm mb-4" data-i18n="team_1_desc">Спеціалізується на UI/UX дизайні, фронтенді та розробці бекенд-архітектури.</p>
+          </div>
+
+          <div class="bg-brandCard border border-neutral-800 p-6 rounded-xl text-center">
+            <div class="w-24 h-24 bg-neutral-800 rounded-full mx-auto mb-4 flex items-center justify-center font-mono text-2xl text-brandAccent border border-neutral-700">
+              DEV2
+            </div>
+            <h3 class="text-xl font-bold">Артем</h3>
+            <p class="text-brandAccent font-mono text-xs mt-1 mb-3">UI/UX Designer & Social Media Manager</p>
+            <p class="text-gray-400 text-sm mb-4" data-i18n="team_2_desc">Відповідає за візуальний стиль, дизайн інтерфейсів та просування бренду в соціальних мережах.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="border-t border-neutral-800 py-20">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <span class="text-brandAccent font-mono text-sm uppercase tracking-widest">// Contact</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6" data-i18n="contact_title">Зв'яжіться з нами</h2>
+        <p class="text-gray-400 mb-8" data-i18n="contact_desc">Маєте ідею для проєкту або хочете співпрацювати? Напишіть нам або слідкуйте за нами в соцмережах!</p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 font-mono text-sm">
+          <a href="https://t.me/+Cd8HaR2Q4k1lNTRi" target="_blank" class="p-3 bg-brandCard border border-neutral-800 rounded hover:border-brandAccent hover:text-brandAccent transition-all">✈️ Telegram</a>
+          <a href="https://www.instagram.com/prog.fut" target="_blank" class="p-3 bg-brandCard border border-neutral-800 rounded hover:border-brandAccent hover:text-brandAccent transition-all">📸 Instagram</a>
+          <a href="https://www.tiktok.com/@progfut6" target="_blank" class="p-3 bg-brandCard border border-neutral-800 rounded hover:border-brandAccent hover:text-brandAccent transition-all">🎵 TikTok</a>
+          <a href="https://www.youtube.com/@progfut" target="_blank" class="p-3 bg-brandCard border border-neutral-800 rounded hover:border-brandAccent hover:text-brandAccent transition-all">▶️ YouTube</a>
+        </div>
+
+        <form class="space-y-4 text-left" onsubmit="event.preventDefault(); alert(currentLang === 'ua' ? 'Повідомлення надіслано!' : 'Message sent!');">
+          <div>
+            <label class="block font-mono text-xs text-gray-400 mb-1" data-i18n="form_name">ІМ'Я</label>
+            <input type="text" placeholder="Your Name" class="w-full bg-brandCard border border-neutral-800 rounded p-3 text-sm focus:border-brandAccent focus:outline-none" required>
+          </div>
+          <div>
+            <label class="block font-mono text-xs text-gray-400 mb-1">EMAIL</label>
+            <input type="email" placeholder="your@email.com" class="w-full bg-brandCard border border-neutral-800 rounded p-3 text-sm focus:border-brandAccent focus:outline-none" required>
+          </div>
+          <div>
+            <label class="block font-mono text-xs text-gray-400 mb-1" data-i18n="form_message">ПОВІДОМЛЕННЯ</label>
+            <textarea rows="4" placeholder="..." class="w-full bg-brandCard border border-neutral-800 rounded p-3 text-sm focus:border-brandAccent focus:outline-none" required></textarea>
+          </div>
+          <button type="submit" class="w-full py-4 bg-brandAccent text-black font-mono font-bold rounded hover:shadow-[0_0_20px_rgba(180,255,57,0.4)] transition-all" data-i18n="form_btn">
+            Надіслати повідомлення
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full border-t border-neutral-800 py-8 text-xs font-mono text-gray-500">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>© 2026 PROGFUT. ALL RIGHTS RESERVED.</div>
+      <div class="flex gap-6">
+        <a href="https://t.me/+Cd8HaR2Q4k1lNTRi" target="_blank" class="hover:text-brandAccent transition-colors">Telegram</a>
+        <a href="https://www.instagram.com/prog.fut" target="_blank" class="hover:text-brandAccent transition-colors">Instagram</a>
+        <a href="https://www.tiktok.com/@progfut6" target="_blank" class="hover:text-brandAccent transition-colors">TikTok</a>
+        <a href="https://www.youtube.com/@progfut" target="_blank" class="hover:text-brandAccent transition-colors">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      ua: {
+        nav_about: "// про нас",
+        nav_projects: "// проєкти",
+        nav_services: "// послуги",
+        nav_media: "// медіа",
+        nav_team: "// команда",
+        nav_contact: "// контакти",
+        btn_connect: "Зв'язок",
+        hero_badge: "Building Apps & Indie Games",
+        hero_title_1: "We build your",
+        hero_desc: "Молода студія розробки. Поєднуємо чистий геометричний дизайн, високу продуктивність та піксельну естетику.",
+        btn_projects: "Переглянути проєкти ↓",
+        btn_about: "Про студію",
+        about_title: "Команда розробників-ентузіастів",
+        about_p1: "Progfut — це студія, створена двома розробниками, які палають ідеєю поєднання сучасних технологій із естетикою ретро-геймінгу.",
+        about_p2: "Ми розробляємо мобільні застосунки та інді-ігри, приділяючи максимальну увагу оптимізації, зручності користування та унікальному візуальному стилю.",
+        projects_title: "Наші проєкти",
+        proj_1_desc: "FIN + LORA | FIN → Finance / Financial | LORA → Logic + Road | ТРИВАЄ РОЗРОБКА",
+        proj_2_desc: "Мінімалістичний трекер задач із гейміфікацією для підвищення продуктивності.",
+        more: "Детальніше →",
+        media_title: "Відео та Девлоги",
+        media_subtitle: "Дивіться процес розробки наших ігор та застосунків прямо на сайті.",
+        services_title: "Що ми робимо",
+        serv_1_title: "Мобільні застосунки",
+        serv_1_desc: "Розробка кросплатформенних застосунків під iOS та Android на Flutter з сучасним UI/UX.",
+        serv_2_title: "Геймдев & Інді-ігри",
+        serv_2_desc: "Створення 2D/3D ігор від ідеї та прототипу до публікації в магазинах застосунків.",
+        serv_3_title: "UI/UX & Pixel Design",
+        serv_3_desc: "Проєктування інтерфейсів, піксель-арт та стилістика в поєднанні з геометричним мінімализмом.",
+        team_title: "Наша команда",
+        team_1_desc: "Спеціалізується на UI/UX дизайні, фронтенді та розробці бекенд-архітектури.",
+        team_2_desc: "Відповідає за візуальний стиль, дизайн інтерфейсів та просування бренду в соціальних мережах.",
+        contact_title: "Зв'яжіться з нами",
+        contact_desc: "Маєте ідею для проєкту або хочете співпрацювати? Напишіть нам або слідкуйте за нами в соцмережах!",
+        form_name: "ІМ'Я",
+        form_message: "ПОВІДОМЛЕННЯ",
+        form_btn: "Надіслати повідомлення"
+      },
+      en: {
+        nav_about: "// about",
+        nav_projects: "// projects",
+        nav_services: "// services",
+        nav_media: "// media",
+        nav_team: "// team",
+        nav_contact: "// contact",
+        btn_connect: "Connect",
+        hero_badge: "Building Apps & Indie Games",
+        hero_title_1: "We build your",
+        hero_desc: "Young development studio. Combining clean geometric design, high performance, and pixel aesthetics.",
+        btn_projects: "View Projects ↓",
+        btn_about: "About Studio",
+        about_title: "Enthusiastic Developer Team",
+        about_p1: "Progfut is a studio created by two developers passionate about combining modern tech with retro-gaming aesthetics.",
+        about_p2: "We develop mobile apps and indie games with a heavy focus on optimization, user experience, and unique visual style.",
+        projects_title: "Our Projects",
+        proj_1_desc: "FIN + LORA | FIN → Finance / Financial | LORA → Logic + Road | DEVELOPMENT IS ONGOINGS",
+        proj_2_desc: "A minimalist task tracker with gamification features to boost your daily productivity.",
+        more: "Read More →",
+        media_title: "Videos & Devlogs",
+        media_subtitle: "Watch our game and app development process directly on the site.",
+        services_title: "What We Do",
+        serv_1_title: "Mobile Apps",
+        serv_1_desc: "Cross-platform mobile development for iOS and Android using Flutter with modern UI/UX.",
+        serv_2_title: "Gamedev & Indie Games",
+        serv_2_desc: "Creating 2D/3D games from concept and prototyping to store publication.",
+        serv_3_title: "UI/UX & Pixel Design",
+        serv_3_desc: "Designing interfaces, pixel art, and styling combined with geometric minimalism.",
+        team_title: "Our Team",
+        team_1_desc: "Specializes in UI/UX design, frontend development, and backend architecture.",
+        team_2_desc: "Responsible for visual style, interface design, and brand presence across social media.",
+        contact_title: "Get In Touch",
+        contact_desc: "Have a project idea or want to collaborate? Write to us or follow our social channels!",
+        form_name: "NAME",
+        form_message: "MESSAGE",
+        form_btn: "Send Message"
+      }
+    };
+
+    let currentLang = 'ua';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'ua' ? 'en' : 'ua';
+      
+      document.getElementById('lang-toggle').innerText = currentLang === 'ua' ? '🌐 UA' : '🌐 EN';
+
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+          element.innerText = translations[currentLang][key];
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
